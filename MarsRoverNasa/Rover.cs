@@ -7,10 +7,10 @@ namespace MarsRoverNasa
 {
    public class Rover
     {
-        public int x; // x coordinate of the current rover position
-        public int y;// y coordinate of the current rover position
-        public string direction;// cardional direction of the current rover position
-        public Rover(string location)
+        public int x;
+        public int y;
+        public string direction;//todo:directionlar kontrol edilecek
+        public Rover(string location, Plateau plateau)
         {
            Int32.TryParse( location.Split(" ")[0],out x);
            Int32.TryParse(location.Split(" ")[1], out y);
@@ -96,6 +96,6 @@ namespace MarsRoverNasa
                         throw new ArgumentException();
                 }
             }
-        }
+        }      
     }
 }

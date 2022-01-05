@@ -7,44 +7,34 @@ namespace MarsRoverNasaTest
 {
     public class RoverShould
     {
+        Plateau plateau = new Plateau("5 5");
+        
         [Fact]
         public void SpinLeft()
         {
-            //arrange
-            Rover rover = new Rover("1 2 N");
-            //act
+            Rover rover = new Rover("1 2 N", plateau);
             rover.SpinLeft();
-            //assert
             Assert.Equal(DirectionConstants.West, rover.direction);
         }
         [Fact]
         public void SpinRight()
         {
-            //arrange
-            Rover rover = new Rover("1 2 N");
-            //act
+            Rover rover = new Rover("1 2 N", plateau);
             rover.SpinRight();
-            //assert
             Assert.Equal(DirectionConstants.East, rover.direction);
         }
         [Fact]
         public void StepForward()
         {
-            //arrange
-            Rover rover = new Rover("1 2 N");
-            //act
+            Rover rover = new Rover("1 2 N", plateau);
             rover.StepForward();
-            //assert
             Assert.Equal(3, rover.y);
         }
         [Fact]
         public void Move()
         {
-            //arrange
-            Rover rover = new Rover("1 2 N");
-            //act
+            Rover rover = new Rover("1 2 N", plateau);
             rover.Move("LMLMLMLMM");
-            //assert
             Assert.Equal("1 3 N", rover.x+ " " +rover.y +" "+ rover.direction);
         }
     }
