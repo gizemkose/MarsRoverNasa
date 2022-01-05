@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Gizos Power\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Gizos Power\\.nuget\\packages"
+    ]
+  }
+}
