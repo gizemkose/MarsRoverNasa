@@ -37,5 +37,12 @@ namespace MarsRoverNasaTest
             rover.Move("LMLMLMLMM");
             Assert.Equal("1 3 N", rover.x+ " " +rover.y +" "+ rover.direction);
         }
+        [Fact]
+        public void CurrentPosition()
+        {
+            Rover rover = new Rover("1 2 N", plateau);
+           var positionStr = rover.CurrentPosition(rover);
+            Assert.Equal(positionStr, rover.x + " " + rover.y + " " + rover.direction);
+        }
     }
 }

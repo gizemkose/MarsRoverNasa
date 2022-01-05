@@ -1,4 +1,6 @@
 ﻿using Common.Constants;
+using Common.ValidationServices;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -22,100 +24,38 @@ using System.Text.RegularExpressions;
 
 //5.plateau's dimensions should be greater than 0
 //TDD
+
+//todo: regexi düzelt
+//todo: grid sınırlarına göre kontrol ekle
 namespace MarsRoverNasa
 {
     class Program
-    {
-   
+    {   
         static void Main(string[] args)
-        {  
-            Plateau plateau = new Plateau(PlateauInput());
+        {
+            ServiceProvider serviceProvider = new ServiceCollection()
+                                           .AddSingleton<PlateauInputService>()
+                                           .AddSingleton<RoverCommandInputService>()
+                                           .AddSingleton<RoverPositionInputService>()
+                                           .AddScoped<RoverManagement>()
+                                           .BuildServiceProvider();
+
+            var plateauValidationService = serviceProvider.GetService<PlateauInputService>();
+            var roverCommandValidationService = serviceProvider.GetService<RoverCommandInputService>();
+            var roverPositionValidationService = serviceProvider.GetService<RoverPositionInputService>();
+            var roverManagement = serviceProvider.GetService<RoverManagement>();
+
+            Plateau plateau = new Plateau(plateauValidationService.PlateauInputValidation());
 
             var addRover = true;
             var roverNumber = 1;
             while (addRover && roverNumber < int.MaxValue)
-            {
-              
-                Rover rover = new Rover(RoverPositionInput(), plateau);
-                rover.Move(RoverCommandInput());
-                Console.WriteLine(roverNumber+ ". Rover Final Position: " + CurrentPosition(rover));
+            {              
+                Rover rover = new Rover(roverPositionValidationService.RoverPositionInput(), plateau);
+                roverManagement.Move(roverCommandValidationService.RoverCommandInput(), rover);
+                Console.WriteLine(roverNumber+ ". Rover Final Position: " + rover.CurrentPosition(rover));
                 roverNumber++;
             }
-        }
-        public static string CurrentPosition(Rover rover)
-        {
-            return rover.x + " " + rover.y + " " + rover.direction;
-        }
-        public static string PlateauInput()
-        {
-            var correctGridInput = false;
-            string plateauSizeInput = string.Empty;
-            int x;
-            int y;
-            while (!correctGridInput)
-            {
-                plateauSizeInput = Console.ReadLine();
-
-                var gridInputControl = plateauSizeInput.Split(" ").Length == 2 && Int32.TryParse(plateauSizeInput.Split(" ")[0], out x) && Int32.TryParse(plateauSizeInput.Split(" ")[1], out y);
-                if (!gridInputControl)
-                {
-                    Console.WriteLine("Not a valid size number for plateau, try again.");
-                }
-                else
-                {
-                    correctGridInput = true;
-                }
-            }
-            return plateauSizeInput;
-        }
-        public static string RoverPositionInput()
-        {
-           
-            var correctPositionInput = false;
-            string positionInput = string.Empty;
-            int x;
-            int y;
-            while (!correctPositionInput)
-            {
-                positionInput = Console.ReadLine();
-               
-                var inputControl =positionInput.Split(" ").Length == 3 && Int32.TryParse(positionInput.Split(" ")[0], out x) && Int32.TryParse(positionInput.Split(" ")[1], out y)  ;
-                var directionControl = false;
-                if (inputControl)
-                {
-                    var direction = positionInput.Split(" ")[2].ToUpper();
-                     directionControl = direction == DirectionConstants.North || direction == DirectionConstants.South || direction == DirectionConstants.East || direction == DirectionConstants.West;//regexe çevir
-                }
-                if (!inputControl || !directionControl)
-                {
-                    Console.WriteLine("Not a valid rover position, try again.");
-                }
-                else
-                {
-                    correctPositionInput = true;
-                }
-            }
-            return positionInput;
-        }
-        public static string RoverCommandInput()
-        {
-            var correctCommandInput = false;
-            string commandInput = string.Empty;
-            while (!correctCommandInput)
-            {
-                commandInput = Console.ReadLine();
-
-                var inputControl = Regex.IsMatch(commandInput.ToUpper(),"["+CommandConstants.SpinLeftCommand+ CommandConstants.SpinRightCommand + CommandConstants.StepForwardCommand+"]+");
-                if (!inputControl)
-                {
-                    Console.WriteLine("Not a valid command, try again.");
-                }
-                else
-                {
-                    correctCommandInput = true;
-                }
-            }
-            return commandInput;
         }
     }
 }

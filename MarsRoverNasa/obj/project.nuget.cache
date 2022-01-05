@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "5KXoQy4pLizk9LIk/nMCvoX1IkAk6BHwQa1up2CjY/p/6H94v6MnzTU6Nm5rHf6mlWrvhSidLeWegscSVUO9UQ==",
+  "dgSpecHash": "cnydYJV8YfB0mp2HGAtz56nB+F5In0TIA+lL4txYtisyafj6w6NtsqrXx6eVZLcvVE446fMIt2DDlc/Qr+y6Dg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Gizos Power\\OneDrive\\Masaüstü\\MarsRoverProject\\MarsRoverNasa\\MarsRoverNasa.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Gizos Power\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
+    "C:\\Users\\Gizos Power\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Gizos Power\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\Gizos Power\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.19\\microsoft.netcore.app.host.win-x64.3.1.19.nupkg.sha512"
   ],
   "logs": []
