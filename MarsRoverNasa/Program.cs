@@ -23,7 +23,6 @@ namespace MarsRoverNasa
     {       
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
         }
     }
 }

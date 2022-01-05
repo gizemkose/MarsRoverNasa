@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gizos Power\\OneDrive\\Masaüstü\\MarsRoverNasa\\MarsRoverNasa\\MarsRoverNasa.csproj": {}
+    "C:\\Users\\Gizos Power\\OneDrive\\Masaüstü\\MarsRoverProject\\MarsRoverNasa\\MarsRoverNasa.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gizos Power\\OneDrive\\Masaüstü\\MarsRoverNasa\\MarsRoverNasa\\MarsRoverNasa.csproj": {
+    "C:\\Users\\Gizos Power\\OneDrive\\Masaüstü\\MarsRoverProject\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gizos Power\\OneDrive\\Masaüstü\\MarsRoverNasa\\MarsRoverNasa\\MarsRoverNasa.csproj",
-        "projectName": "MarsRoverNasa",
-        "projectPath": "C:\\Users\\Gizos Power\\OneDrive\\Masaüstü\\MarsRoverNasa\\MarsRoverNasa\\MarsRoverNasa.csproj",
+        "projectUniqueName": "C:\\Users\\Gizos Power\\OneDrive\\Masaüstü\\MarsRoverProject\\Common\\Common.csproj",
+        "projectName": "Common",
+        "projectPath": "C:\\Users\\Gizos Power\\OneDrive\\Masaüstü\\MarsRoverProject\\Common\\Common.csproj",
         "packagesPath": "C:\\Users\\Gizos Power\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gizos Power\\OneDrive\\Masaüstü\\MarsRoverNasa\\MarsRoverNasa\\obj\\",
+        "outputPath": "C:\\Users\\Gizos Power\\OneDrive\\Masaüstü\\MarsRoverProject\\Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Gizos Power\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,6 +28,70 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.19, 3.1.19]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Gizos Power\\OneDrive\\Masaüstü\\MarsRoverProject\\MarsRoverNasa\\MarsRoverNasa.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Gizos Power\\OneDrive\\Masaüstü\\MarsRoverProject\\MarsRoverNasa\\MarsRoverNasa.csproj",
+        "projectName": "MarsRoverNasa",
+        "projectPath": "C:\\Users\\Gizos Power\\OneDrive\\Masaüstü\\MarsRoverProject\\MarsRoverNasa\\MarsRoverNasa.csproj",
+        "packagesPath": "C:\\Users\\Gizos Power\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gizos Power\\OneDrive\\Masaüstü\\MarsRoverProject\\MarsRoverNasa\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Gizos Power\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Gizos Power\\OneDrive\\Masaüstü\\MarsRoverProject\\Common\\Common.csproj": {
+                "projectPath": "C:\\Users\\Gizos Power\\OneDrive\\Masaüstü\\MarsRoverProject\\Common\\Common.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

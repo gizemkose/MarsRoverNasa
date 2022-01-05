@@ -1,3 +1,4 @@
+using Common.Constants;
 using MarsRoverNasa;
 using System;
 using Xunit;
@@ -14,7 +15,7 @@ namespace MarsRoverNasaTest
             //act
             rover.SpinLeft();
             //assert
-            Assert.Equal("W", rover.direction);
+            Assert.Equal(DirectionConstants.West, rover.direction);
         }
         [Fact]
         public void SpinRight()
@@ -24,7 +25,7 @@ namespace MarsRoverNasaTest
             //act
             rover.SpinRight();
             //assert
-            Assert.Equal("E", rover.direction);
+            Assert.Equal(DirectionConstants.East, rover.direction);
         }
         [Fact]
         public void StepForward()
