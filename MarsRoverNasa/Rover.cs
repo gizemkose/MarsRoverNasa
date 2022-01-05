@@ -5,7 +5,14 @@ using System.Text;
 
 namespace MarsRoverNasa
 {
-   public class Rover
+    public interface IRover
+    {
+        void SpinLeft();
+        void SpinRight();
+        void StepForward();
+        string CurrentPosition(Rover rover);
+    }
+   public class Rover :IRover
     {
         public int x;
         public int y;
@@ -14,7 +21,7 @@ namespace MarsRoverNasa
         {
            Int32.TryParse( location.Split(" ")[0],out x);
            Int32.TryParse(location.Split(" ")[1], out y);
-            direction = location.Split(" ")[2];
+            direction = location.Split(" ")[2].ToUpper();
         }
         public void SpinLeft()
         {
@@ -75,27 +82,10 @@ namespace MarsRoverNasa
                 default:
                     throw new ArgumentException();
             }
-        }
-        public void Move(string roverCommand)
+        }       
+        public string CurrentPosition(Rover rover)
         {
-            char[] intructions = roverCommand.ToUpper().ToCharArray();
-            for (int i = 0; i < intructions.Length; i++)
-            {
-                switch (intructions[i])
-                {
-                    case CommandConstants.SpinLeftCommand:
-                        SpinLeft();
-                        break;
-                    case CommandConstants.SpinRightCommand:
-                        SpinRight();
-                        break;
-                    case CommandConstants.StepForwardCommand:
-                        StepForward();
-                        break;
-                    default:
-                        throw new ArgumentException();
-                }
-            }
-        }      
+            return rover.x + " " + rover.y + " " + rover.direction;
+        }
     }
 }

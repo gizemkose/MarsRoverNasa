@@ -33,3 +33,6 @@ C:\Users\Gizos Power\OneDrive\Masaüstü\MarsRoverProject\MarsRoverNasa\obj\Debu
 C:\Users\Gizos Power\OneDrive\Masaüstü\MarsRoverProject\MarsRoverNasa\obj\Debug\netcoreapp3.1\MarsRoverNasa.dll
 C:\Users\Gizos Power\OneDrive\Masaüstü\MarsRoverProject\MarsRoverNasa\obj\Debug\netcoreapp3.1\MarsRoverNasa.pdb
 C:\Users\Gizos Power\OneDrive\Masaüstü\MarsRoverProject\MarsRoverNasa\obj\Debug\netcoreapp3.1\MarsRoverNasa.genruntimeconfig.cache
+C:\Users\Gizos Power\OneDrive\Masaüstü\MarsRoverProject\MarsRoverNasa\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Gizos Power\OneDrive\Masaüstü\MarsRoverProject\MarsRoverNasa\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Gizos Power\OneDrive\Masaüstü\MarsRoverProject\MarsRoverNasa\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
