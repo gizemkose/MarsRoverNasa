@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fJqncI5bpOtT67P230Ia1VIy0bqJK19jK/ym+45QbBpO4CsblSLoshPVUbKtJmkEnBD1nSAyhwHHB6/bY+PtvA==",
+  "dgSpecHash": "5KXoQy4pLizk9LIk/nMCvoX1IkAk6BHwQa1up2CjY/p/6H94v6MnzTU6Nm5rHf6mlWrvhSidLeWegscSVUO9UQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gizos Power\\OneDrive\\Masaüstü\\MarsRoverNasa\\MarsRoverNasa\\MarsRoverNasa.csproj",
+  "projectFilePath": "C:\\Users\\Gizos Power\\OneDrive\\Masaüstü\\MarsRoverProject\\MarsRoverNasa\\MarsRoverNasa.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gizos Power\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.19\\microsoft.netcore.app.host.win-x64.3.1.19.nupkg.sha512"
   ],

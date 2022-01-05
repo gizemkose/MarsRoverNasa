@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.Constants;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,10 +7,10 @@ namespace MarsRoverNasa
 {
    public class Rover
     {
-        public int x; // x coordinate of the current rover position
-        public int y;// y coordinate of the current rover position
-        public string direction;// cardional direction of the current rover position
-        public Rover(string location)
+        public int x;
+        public int y;
+        public string direction;//todo:directionlar kontrol edilecek
+        public Rover(string location, Plateau plateau)
         {
            Int32.TryParse( location.Split(" ")[0],out x);
            Int32.TryParse(location.Split(" ")[1], out y);
@@ -19,17 +20,17 @@ namespace MarsRoverNasa
         {
             switch (direction)
             {
-                case "N":
-                    direction = "W";
+                case DirectionConstants.North:
+                    direction = DirectionConstants.West;
                     break;
-                case "E":
-                    direction = "N";
+                case DirectionConstants.East:
+                    direction = DirectionConstants.North;
                     break;
-                case "S":
-                    direction = "E";
+                case DirectionConstants.South:
+                    direction = DirectionConstants.East;
                     break;
-                case "W":
-                    direction = "S";
+                case DirectionConstants.West:
+                    direction = DirectionConstants.South;
                     break;
                 default:
                     throw new ArgumentException();
@@ -39,17 +40,17 @@ namespace MarsRoverNasa
         {
             switch (direction)
             {
-                case "N":
-                    direction = "E";
+                case DirectionConstants.North:
+                    direction = DirectionConstants.East;
                     break;
-                case "E":
-                    direction = "S";
+                case DirectionConstants.East:
+                    direction = DirectionConstants.South;
                     break;
-                case "S":
-                    direction = "W";
+                case DirectionConstants.South:
+                    direction = DirectionConstants.West;
                     break;
-                case "W":
-                    direction = "N";
+                case DirectionConstants.West:
+                    direction = DirectionConstants.North;
                     break;
                 default:
                     throw new ArgumentException();
@@ -59,16 +60,16 @@ namespace MarsRoverNasa
         {
             switch (direction)
             {
-                case "N":
+                case DirectionConstants.North:
                     y++;
                     break;
-                case "E":
+                case DirectionConstants.East:
                     x++;
                     break;
-                case "S":
+                case DirectionConstants.South:
                     y--;
                     break;
-                case "W":
+                case DirectionConstants.West:
                     x--;
                     break;
                 default:
@@ -78,24 +79,23 @@ namespace MarsRoverNasa
         public void Move(string roverCommand)
         {
             char[] intructions = roverCommand.ToCharArray();
-            //loop throuh array . for each letter, call spinleft, spinright or stepforward 
             for (int i = 0; i < intructions.Length; i++)
             {
                 switch (intructions[i])
                 {
-                    case 'L':
+                    case CommandConstants.SpinLeftCommand:
                         SpinLeft();
                         break;
-                    case 'R':
+                    case CommandConstants.SpinRightCommand:
                         SpinRight();
                         break;
-                    case 'M':
+                    case CommandConstants.StepForwardCommand:
                         StepForward();
                         break;
                     default:
                         throw new ArgumentException();
                 }
             }
-        }
+        }      
     }
 }

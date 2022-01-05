@@ -16,6 +16,8 @@
 //2. Rover Should Spin Right
 //3. Rover Should Move Forward
 //4. Rover Should Go to "1 3 N"
+
+//5.plateau's dimensions should be greater than 0
 //TDD
 namespace MarsRoverNasa
 {
@@ -23,7 +25,18 @@ namespace MarsRoverNasa
     {       
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Plateau plateau = new Plateau("5 5");
+            Rover roverOne = new Rover("1 2 N", plateau);
+            roverOne.Move("LMLMLMLMM");
+            Console.WriteLine(CurrentPosition(roverOne));
+
+            Rover roverTwo = new Rover("3 3 E", plateau);
+            roverTwo.Move("MMRMMRMRRM");
+            Console.WriteLine(CurrentPosition(roverTwo));
+        }
+        public static string CurrentPosition(Rover rover)
+        {
+            return rover.x + " " + rover.y + " " + rover.direction;
         }
     }
 }
