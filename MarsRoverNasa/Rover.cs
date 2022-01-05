@@ -78,7 +78,7 @@ namespace MarsRoverNasa
         }
         public void Move(string roverCommand)
         {
-            char[] intructions = roverCommand.ToCharArray();
+            char[] intructions = roverCommand.ToUpper().ToCharArray();
             for (int i = 0; i < intructions.Length; i++)
             {
                 switch (intructions[i])
