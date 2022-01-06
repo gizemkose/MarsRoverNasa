@@ -1,6 +1,7 @@
 # MarsRoverNasa
 Mars rover project 
 
+
 Code Review: Mars Rover
 Part 1
 A squad of robotic rovers are to be landed by NASA on a plateau on Mars. This plateau, which is
@@ -14,6 +15,7 @@ In order to control a rover, NASA sends a simple string of letters. The possible
 'M'. 'L' and 'R' makes the rover spin 90 degrees left or right respectively, without moving from its
 current spot. 'M' means move forward one grid point, and maintain the same heading.
 Assume that the square directly North from (x, y) is (x, y+1).
+
 Input:
 The first line of input is the upper-right coordinates of the plateau, the lower-left coordinates are
 assumed to be 0,0.
