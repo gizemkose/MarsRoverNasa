@@ -10,14 +10,12 @@ namespace Common.ValidationServices
         {
             var correctGridInput = false;
             string plateauSizeInput = string.Empty;
-            int x;
-            int y;
+        
             while (!correctGridInput)
             {
                 plateauSizeInput = Console.ReadLine();
 
-                var gridInputControl = plateauSizeInput.Split(" ").Length == 2 && Int32.TryParse(plateauSizeInput.Split(" ")[0], out x) && Int32.TryParse(plateauSizeInput.Split(" ")[1], out y);
-                if (!gridInputControl)
+               if (!InputControl(plateauSizeInput))
                 {
                     Console.WriteLine("Not a valid size number for plateau, try again.");
                 }
@@ -27,6 +25,12 @@ namespace Common.ValidationServices
                 }
             }
             return plateauSizeInput;
+        }
+        public bool InputControl(string plateauSizeInput)
+        {
+            int x;
+            int y;
+            return plateauSizeInput.Split(" ").Length == 2 && Int32.TryParse(plateauSizeInput.Split(" ")[0], out x) && Int32.TryParse(plateauSizeInput.Split(" ")[1], out y);
         }
     }
 }
