@@ -16,8 +16,7 @@ namespace Common.ValidationServices
             {
                 commandInput = Console.ReadLine();
 
-                var inputControl = Regex.IsMatch(commandInput.ToUpper(), "[" + CommandConstants.SpinLeftCommand + CommandConstants.SpinRightCommand + CommandConstants.StepForwardCommand + "]+");
-                if (!inputControl)
+                if (!InputControl(commandInput))
                 {
                     Console.WriteLine("Not a valid command, try again.");
                 }
@@ -27,6 +26,14 @@ namespace Common.ValidationServices
                 }
             }
             return commandInput;
+        }
+        public bool InputControl(string commandInput)
+        {
+            if (commandInput == "")
+            {
+                return false;
+            }
+            return Regex.IsMatch(commandInput.ToUpper(), "^[" + CommandConstants.SpinLeftCommand + CommandConstants.SpinRightCommand + CommandConstants.StepForwardCommand + "]*$");
         }
     }
 }

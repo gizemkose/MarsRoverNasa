@@ -51,9 +51,9 @@ namespace MarsRoverNasa
             var roverNumber = 1;
             while (addRover && roverNumber < int.MaxValue)
             {              
-                Rover rover = new Rover(roverPositionValidationService.RoverPositionInput(), plateau);
-                roverManagement.Move(roverCommandValidationService.RoverCommandInput(), rover);
-                Console.WriteLine(roverNumber+ ". Rover Final Position: " + rover.CurrentPosition(rover));
+                Rover rover = new Rover(roverPositionValidationService.RoverPositionInput(plateau.xSize,plateau.ySize), plateau);
+                roverManagement.Move(roverCommandValidationService.RoverCommandInput(), rover, plateau);
+                Console.WriteLine(roverNumber+ ". Rover Position: " + rover.CurrentPosition(rover));
                 roverNumber++;
             }
         }
