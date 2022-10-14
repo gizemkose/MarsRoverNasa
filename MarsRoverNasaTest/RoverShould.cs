@@ -31,7 +31,7 @@ namespace MarsRoverNasaTest
             Assert.Equal(3, rover.y);
         }    
         [Fact]
-        public void CurrentPosition()
+        public void GetCurrentPosition()
         {
             Rover rover = new Rover("1 2 N", plateau);
            var positionStr = rover.CurrentPosition(rover);
