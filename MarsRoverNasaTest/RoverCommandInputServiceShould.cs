@@ -10,21 +10,21 @@ namespace MarsRoverNasaTest
     public class RoverCommandInputServiceShould
     {      
         [Fact]
-        public void InputControl()
+        public void Pass_With_CorrectInput()
         {
             RoverCommandInputService inputService = new RoverCommandInputService();
             var available = inputService.InputControl("LMLMLMLMM");
             Assert.True(available);
         }
         [Fact]
-        public void InputControl_null()
+        public void Fail_By_NullInput()
         {
             RoverCommandInputService inputService = new RoverCommandInputService();
             var available = inputService.InputControl("");
             Assert.False(available);
         }
         [Fact]
-        public void InputControl_NotListed()
+        public void Fail_By_NotListedInput()
         {
             RoverCommandInputService inputService = new RoverCommandInputService();
             var available = inputService.InputControl("LMLAAA");
