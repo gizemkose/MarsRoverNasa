@@ -17,7 +17,7 @@ namespace MarsRoverNasaTest
             Assert.Equal("1 3 N", rover.x+ " " +rover.y +" "+ rover.direction);
         }
         [Fact]
-        public void AvailableMovement()
+        public void FindAvailableMovement()
         {
             Rover rover = new Rover("1 2 N", plateau);
             RoverManagement roverManagement = new RoverManagement();
@@ -25,7 +25,7 @@ namespace MarsRoverNasaTest
             Assert.True(available);
         }
         [Fact]
-        public void NotAvailableMovementNorth()
+        public void NotFindAvailableMovementNorth()
         {
             Rover rover = new Rover("2 5 N", plateau);
             RoverManagement roverManagement = new RoverManagement();
@@ -33,7 +33,7 @@ namespace MarsRoverNasaTest
             Assert.False(available);
         }
         [Fact]
-        public void NotAvailableMovementEast()
+        public void NotFindAvailableMovementEast()
         {
             Rover rover = new Rover("5 2 E", plateau);
             RoverManagement roverManagement = new RoverManagement();
@@ -41,7 +41,7 @@ namespace MarsRoverNasaTest
             Assert.False(available);
         }
         [Fact]
-        public void NotAvailableMovementSouth()
+        public void NotFindAvailableMovementSouth()
         {
             Rover rover = new Rover("1 0 S", plateau);
             RoverManagement roverManagement = new RoverManagement();
@@ -49,7 +49,7 @@ namespace MarsRoverNasaTest
             Assert.False(available);
         }
         [Fact]
-        public void NotAvailableMovementWest()
+        public void NotFindAvailableMovementWest()
         {
             Rover rover = new Rover("0 1 W", plateau);
             RoverManagement roverManagement = new RoverManagement();
